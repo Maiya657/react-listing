@@ -8,7 +8,7 @@ export default function ItemCard(item: Item) {
   return (
     <div className="product-card">
       <div className="product-image">
-        <a href={item.url}>
+        <a href={item.url} className="product-image">
           {item.MainImage && <img src={item.MainImage.url_570xN}/>}
         </a>
       </div>
@@ -20,10 +20,6 @@ export default function ItemCard(item: Item) {
             : item.currency_code === 'GBP' ? '£'
             : 'CAD'}
           {item.price}
-          {item.currency_code != 'USD' 
-            && item.currency_code != 'EUR' 
-            && item.currency_code != 'GBP' 
-            ? ` ${item.currency_code}` : 'CAD'}
         </p>
         <p className={`${stock} item-quantity`}>{item.quantity} left</p>
       </div>
